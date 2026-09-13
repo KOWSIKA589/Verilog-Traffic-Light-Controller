@@ -156,17 +156,15 @@ Traffic_Light_Controller dut(.clk(clk) , .rst(rst) , .light_M1(light_M1) , .ligh
 initial
 begin
     clk=1'b0;
-    forever #(1000000000/2) clk=~clk;
+	forever #(1000000000/2) clk=~clk; // Time Period = 1 sec
 end
 
 initial
 begin
-    rst=0;
-    #1000000000;
     rst=1;
     #1000000000;
     rst=0;
-    #(1000000000*200);
+    #30000000000;
     $finish;
 end
   
